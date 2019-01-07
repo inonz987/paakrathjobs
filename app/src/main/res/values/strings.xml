@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">งานภาครัฐ</string>
+    <string name="tab_text_1">วุฒิ ป.ตรี</string>
+    <string name="tab_text_2">วุฒิ ป.โท</string>
+    <string name="tab_text_3">วุฒิ ป.เอก</string>
+    <string name="tab_text_4">วุฒิ อื่น ๆ</string>
+    <string name="action_settings">เกี่ยวกับ</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="bachelor_tab">วุฒิ ป.ตรี</string>
+    <string name="master_tab">วุฒิ ป.โท</string>
+    <string name="doctor_tab">วุฒิ ป.เอก</string>
+    <string name="other_tab">วุฒิ อื่น ๆ</string>
+    <string name="splashscreen_des">Hello Welcome to My Apps</string>
+    <string name="Loadingscreen">Loading screen</string>
+    Loading screen
+</resources>

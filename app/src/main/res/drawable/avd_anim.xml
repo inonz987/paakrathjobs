@@ -1,0 +1,55 @@
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            android:name="vector"
+            android:width="142dp"
+            android:height="32dp"
+            android:viewportWidth="142"
+            android:viewportHeight="32">
+            <path
+                android:name="path"
+                android:pathData="M 15 4 C 11.819 4 8.764 5.265 6.515 7.515 C 4.265 9.764 3 12.819 3 16 C 3 19.181 4.265 22.236 6.515 24.485 C 8.764 26.735 11.819 28 15 28 C 18.181 28 21.236 26.735 23.485 24.485 C 25.735 22.236 27 19.181 27 16 C 27 12.819 25.735 9.764 23.485 7.515 C 21.236 5.265 18.181 4 15 4 Z M 128 4 C 124.819 4 121.764 5.265 119.515 7.515 C 117.265 9.764 116 12.819 116 16 C 116 19.181 117.265 22.236 119.515 24.485 C 121.764 26.735 124.819 28 128 28 C 131.181 28 134.236 26.735 136.485 24.485 C 138.735 22.236 140 19.181 140 16 C 140 12.819 138.735 9.764 136.485 7.515 C 134.236 5.265 131.181 4 128 4 Z M 39 4 L 63 4 L 63 28 L 39 28 Z M 92 4 L 105.9 28 L 78.1 28 L 92 4 Z"
+                android:fillColor="#c4c4c4"
+                android:strokeWidth="1"/>
+        </vector>
+    </aapt:attr>
+    <target android:name="path">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator
+                    android:propertyName="fillColor"
+                    android:duration="1000"
+                    android:valueFrom="#d81b60"
+                    android:valueTo="#1de9b6"
+                    android:valueType="colorType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+                <objectAnimator
+                    android:propertyName="fillColor"
+                    android:startOffset="1000"
+                    android:duration="1000"
+                    android:valueFrom="#1de9b6"
+                    android:valueTo="#212121"
+                    android:valueType="colorType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+                <objectAnimator
+                    android:propertyName="fillColor"
+                    android:startOffset="2000"
+                    android:duration="1000"
+                    android:valueFrom="#212121"
+                    android:valueTo="#c62828"
+                    android:valueType="colorType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+                <objectAnimator
+                    android:propertyName="fillColor"
+                    android:startOffset="3000"
+                    android:duration="1000"
+                    android:valueFrom="#c62828"
+                    android:valueTo="#18ffff"
+                    android:valueType="colorType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+            </set>
+        </aapt:attr>
+    </target>
+</animated-vector>
