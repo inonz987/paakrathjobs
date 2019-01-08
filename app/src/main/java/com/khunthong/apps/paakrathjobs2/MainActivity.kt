@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
             override fun run() {
                 doubleBackToExitPressedOnce = false
             }
-        }, 2000)
+        }, 4000)
     }
 
 
