@@ -14,11 +14,11 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="height" value="32" />
-                            <entry key="outputName" value="ic_group_2" />
+                            <entry key="height" value="52" />
+                            <entry key="outputName" value="ic_titlebar_logo" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="C:\Users\chano\Desktop\Group 2.svg" />
-                            <entry key="width" value="142" />
+                            <entry key="sourceFile" value="C:\Users\chano\Desktop\titlebar_logo.svg" />
+                            <entry key="width" value="52" />
                           </map>
                         </option>
                       </PersistentState>

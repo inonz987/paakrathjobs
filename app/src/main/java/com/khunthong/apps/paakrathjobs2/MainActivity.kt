@@ -1,15 +1,14 @@
 package com.khunthong.apps.paakrathjobs2
 
 import android.support.design.widget.TabLayout
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.app.ActionBar
 
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.os.Bundle
 import android.os.Handler
-import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -44,11 +43,25 @@ class MainActivity : AppCompatActivity() {
         container.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabs))
         tabs.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(container))
 
-     //fab here
+        setSupportActionBar(toolbar)
 
+        // Now get the support action bar
+        val actionBar = supportActionBar
 
-       // val toolbar = findViewById<Toolbar>(R.id.toolbar)
-      //  setSupportActionBar(toolbar)
+        // Set toolbar title/app title
+        actionBar!!.title = " งานภาครัฐ"
+
+        /*
+        Set action bar/toolbar sub title
+        actionBar.subtitle = "App subtitle"
+        Set action bar elevation
+        actionBar.elevation = 2.0F
+        Display the app icon in action bar/toolbar
+        */
+        actionBar.setDisplayShowHomeEnabled(true)
+        actionBar.setLogo(R.drawable.ic_titlebar_logo)
+        //actionBar.setLogo(R.mipmap.ic_launcher)
+        actionBar.setDisplayUseLogoEnabled(true)
 
     }
 
