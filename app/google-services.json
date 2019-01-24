@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "749857261130",
+    "firebase_url": "https://paakrathapp.firebaseio.com",
+    "project_id": "paakrathapp",
+    "storage_bucket": "paakrathapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749857261130:android:952542925e0fdb22",
+        "android_client_info": {
+          "package_name": "com.khunthong.apps.paakrathjobs2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "749857261130-v8encmkosgsrqa1ng0nakulfoe86cs4t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.khunthong.apps.paakrathjobs2",
+            "certificate_hash": "c0e4e908bc2ad227cfbbd403ac372474f2051c4f"
+          }
+        },
+        {
+          "client_id": "749857261130-u6qnmhenfs3bb1mj7087doief1nofjkt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL3DOwGMBMJdGfC03EJAFZIVus4sF1l20"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "749857261130-u6qnmhenfs3bb1mj7087doief1nofjkt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
