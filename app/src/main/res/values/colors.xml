@@ -6,4 +6,14 @@
     <color name="white_1">#FFFF</color>
     <color name="black_1">#000000</color>
     <color name="title_bg">#25c2ed</color>
+    <color name="list_color">#F48FB1</color>
+    <color name="colorPrimary2">@color/color_header</color>
+    <color name="colorPrimaryDark2">@color/color_dark_header</color>
+    <color name="colorAccent2">#FF4081</color>
+    <color name="color_header">#C58EC3</color>
+    <color name="color_content_1">#4E579D</color>
+    <color name="color_content_2">#FE8AA5</color>
+    <color name="color_bg">#FEE9E9</color>
+    <color name="color_dark_header">#9D77BA</color>
+    <color name="color_text">#FFFFFF</color>
 </resources>

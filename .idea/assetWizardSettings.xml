@@ -5,51 +5,7 @@
       <map>
         <entry key="imageWizard">
           <value>
-            <PersistentState>
-              <option name="children">
-                <map>
-                  <entry key="imageAssetPanel">
-                    <value>
-                      <PersistentState>
-                        <option name="children">
-                          <map>
-                            <entry key="launcher">
-                              <value>
-                                <PersistentState>
-                                  <option name="children">
-                                    <map>
-                                      <entry key="foregroundImage">
-                                        <value>
-                                          <PersistentState>
-                                            <option name="values">
-                                              <map>
-                                                <entry key="scalingPercent" value="53" />
-                                              </map>
-                                            </option>
-                                          </PersistentState>
-                                        </value>
-                                      </entry>
-                                    </map>
-                                  </option>
-                                  <option name="values">
-                                    <map>
-                                      <entry key="backgroundAssetType" value="COLOR" />
-                                      <entry key="backgroundColor" value="d81b60" />
-                                      <entry key="foregroundImage" value="C:\Users\chano\Desktop\cat_icon.png" />
-                                      <entry key="showSafeZone" value="false" />
-                                    </map>
-                                  </option>
-                                </PersistentState>
-                              </value>
-                            </entry>
-                          </map>
-                        </option>
-                      </PersistentState>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </PersistentState>
+            <PersistentState />
           </value>
         </entry>
         <entry key="vectorWizard">
@@ -63,11 +19,11 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="height" value="52" />
-                            <entry key="outputName" value="ic_titlebar_logo" />
+                            <entry key="height" value="16" />
+                            <entry key="outputName" value="ic_www" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="C:\Users\chano\Desktop\titlebar_logo.svg" />
-                            <entry key="width" value="52" />
+                            <entry key="sourceFile" value="D:\www.svg" />
+                            <entry key="width" value="16" />
                           </map>
                         </option>
                       </PersistentState>
