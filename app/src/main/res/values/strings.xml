@@ -16,8 +16,8 @@
     <string name="About1">เกี่ยวกับแอปงานภาครัฐ</string>
     <string name="About2">งานภาครัฐพัฒนาเพื่อท่านที่สนใจงานในส่วนงานภาครัฐบาล
         เป็นแอปฟรีที่ตั้งใจจัดทำขึ้นเพื่อประโยชน์แก่ทุกท่าน
-        ท่านสามารถสนับสนุนผู้พัฒนาเพื่อปรับปรุงและพัฒนา
-        แอปที่มีประโยชน์เพิ่มเติ่มได้ผ่านช่องทางต่อไปนี้</string>
+        สามารถสนับสนุนผู้พัฒนาเพื่อปรับปรุงและพัฒนา
+        แอปที่มีประโยชน์เพิ่มเติมได้ผ่านช่องทางนี้</string>
     <string name="model_pic_des2">About app pic</string>
     <string name="dev_by">UI/UX/Mobile Dev by Khunthongteam</string>
     <string name="bulb">bulb</string>
@@ -25,8 +25,9 @@
     <string name="appversion">App. Version 1.0</string>
     <string name="infopic">infopic</string>
     <string name="contact2">www.paakrathapp.ga</string>
-    <string name="contact1">ติดต่อผู้พัฒนาได้ทาง khunthongteam@gmail.com</string>
+    <string name="contact1">ติดต่อผู้พัฒนาที่ khunthongteam@gmail.com</string>
     <string name="contactsingn1">contactsingn1</string>
     <string name="contactsingn2">contactsingn1</string>
+    <string name="closebutt">closebutt</string>
 
 </resources>

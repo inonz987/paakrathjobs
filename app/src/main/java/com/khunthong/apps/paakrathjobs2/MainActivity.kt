@@ -1,5 +1,8 @@
 package com.khunthong.apps.paakrathjobs2
 
+import android.content.Intent
+import android.graphics.Color
+import android.graphics.Typeface
 import com.google.android.material.tabs.TabLayout
 import androidx.appcompat.app.AppCompatActivity
 
@@ -11,10 +14,12 @@ import android.os.Handler
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import es.dmoral.toasty.Toasty
 
 import kotlinx.android.synthetic.main.activity_main.*
 
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
     private var mSectionsPagerAdapter: SectionsPagerAdapter? = null
@@ -66,7 +71,8 @@ class MainActivity : AppCompatActivity() {
         val id = item.itemId
 
         if (id == R.id.action_settings) {
-            return true
+           val intent = Intent(this@MainActivity, AboutActivity::class.java)
+            startActivity(intent)
         }
 
         return super.onOptionsItemSelected(item)
@@ -80,14 +86,12 @@ class MainActivity : AppCompatActivity() {
             return
         }
         this.doubleBackToExitPressedOnce = true
-        Toast.makeText(this, "กดย้อนกลับอีกครั้งเพื่อออกจากแอป", Toast.LENGTH_SHORT).show()
-        Handler().postDelayed(object:Runnable {
-            override fun run() {
-                doubleBackToExitPressedOnce = false
-            }
-        }, 4000)
-    }
+        //Toast.makeText(this, "กดย้อนกลับอีกครั้งเพื่อออกจากแอป", Toast.LENGTH_SHORT).show()
+        //Toasty.normal(this, "กดย้อนกลับอีกครั้งเพื่อออกจากแอป",R.drawable.ic_app_logo).show()
+        Toasty.warning(this,"กดย้อนกลับอีกครั้งเพื่อออกจากแอป",Toast.LENGTH_SHORT, true).show()
 
+    Handler().postDelayed({ doubleBackToExitPressedOnce = false }, 4000)
+    }
 
     /**
      * A [FragmentPagerAdapter] that returns a fragment corresponding to

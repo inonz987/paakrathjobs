@@ -19,11 +19,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="height" value="16" />
-                            <entry key="outputName" value="ic_www" />
-                            <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="D:\www.svg" />
-                            <entry key="width" value="16" />
+                            <entry key="outputName" value="ic_closebutt" />
+                            <entry key="sourceFile" value="D:\closebutt.svg" />
                           </map>
                         </option>
                       </PersistentState>

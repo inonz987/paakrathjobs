@@ -25,12 +25,13 @@
               android:layout_marginEnd="8dp"
               app:layout_constraintBottom_toBottomOf="parent"
               android:textColor="@color/black_1"
-              android:fontFamily="@font/srabunregular"/>
+              android:fontFamily="@font/srabunregular" app:layout_constraintHorizontal_bias="0.0"
+              app:layout_constraintVertical_bias="0.0"/>
     <TextView android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:text="@string/About2"
               app:layout_constraintTop_toTopOf="parent"
-              android:layout_marginTop="230dp"
+              android:layout_marginTop="220dp"
               android:id="@+id/Aboutapptext2"
               android:textSize="15sp"
               android:textAlignment="center"
@@ -54,13 +55,13 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/imageView2"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/Aboutapptext2"
+            android:layout_marginBottom="32dp"
             tools:text="@string/dev_by"
             android:fontFamily="sans-serif"
-            android:textAllCaps="false" android:textColor="@color/black_1"/>
+            android:textAllCaps="false" android:textColor="@color/black_1"
+            app:layout_constraintBottom_toTopOf="@+id/Aboutapptext2"
+            app:layout_constraintTop_toTopOf="@+id/Aboutapptext" android:layout_marginTop="100dp"/>
     <TextView
             android:text="@string/appversion"
             android:layout_width="wrap_content"
@@ -68,16 +69,14 @@
             android:id="@+id/textView2"
             tools:text="@string/appversion"
             android:fontFamily="sans-serif"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/imageView6"
-            android:layout_marginBottom="100dp"
-            app:layout_constraintBottom_toBottomOf="@+id/Aboutapptext2"
             android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             android:textAlignment="center"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false" android:layout_marginTop="140dp"
+            app:layout_constraintTop_toTopOf="@+id/Aboutapptext" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/Aboutapptext2"/>
     <TextView
             android:text="@string/contact1"
             android:layout_width="wrap_content"
@@ -89,11 +88,11 @@
             app:layout_constraintEnd_toEndOf="@+id/Aboutapptext2"
             android:layout_marginBottom="50dp"
             app:layout_constraintBottom_toBottomOf="@+id/Aboutapptext2"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
             android:contentDescription="@string/contact1"
+            android:autoLink="email"
             android:fontFamily="@font/srabunregular"
-            android:textColor="@color/black_1"/>
+            android:textColor="@color/black_1" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView6" android:layout_marginStart="8dp"/>
     <TextView
             android:text="@string/contact2"
             android:layout_width="wrap_content"
@@ -102,26 +101,26 @@
             android:textAlignment="center"
             app:layout_constraintStart_toStartOf="@+id/Aboutapptext2"
             app:layout_constraintEnd_toEndOf="@+id/Aboutapptext2"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toBottomOf="@+id/Aboutapptext2"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"
             android:contentDescription="@string/contact2"
             android:fontFamily="@font/srabunregular"
             android:textColor="@color/black_1"
-            tools:text="@string/contact2" app:layout_constraintVertical_bias="0.733"/>
+            tools:text="@string/contact2"
+            android:autoLink="web"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/imageView6"/>
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_aboutpic"
             android:id="@+id/imageView2"
             android:contentDescription="@string/model_pic_des2"
-            android:layout_marginTop="8dp"
             app:layout_constraintTop_toTopOf="@+id/Aboutapptext"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="40dp"
             app:layout_constraintBottom_toTopOf="@+id/Aboutapptext2"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"/>
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -129,56 +128,60 @@
             android:id="@+id/imageView3"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/Aboutapptext2"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2"
             android:layout_marginEnd="270dp"
             app:layout_constraintEnd_toEndOf="parent"
-            android:contentDescription="@string/bulb"/>
+            android:contentDescription="@string/bulb"
+            android:layout_marginTop="100dp" app:layout_constraintTop_toTopOf="@+id/Aboutapptext"
+            android:layout_marginBottom="32dp" app:layout_constraintBottom_toTopOf="@+id/Aboutapptext2"/>
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/MyQRcode1_"
+            app:srcCompat="@drawable/myqrcode1_"
             android:id="@+id/imageView6"
             android:layout_marginBottom="32dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/Aboutapptext"
             app:layout_constraintStart_toStartOf="@+id/Aboutapptext"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="1dp"
-            app:layout_constraintTop_toTopOf="@+id/Aboutapptext2"
+            android:layout_marginTop="280dp"
+            app:layout_constraintTop_toTopOf="parent"
             android:contentDescription="@string/myQR"/>
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_info"
             android:id="@+id/imageView7"
-            app:layout_constraintEnd_toStartOf="@+id/textView2"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintStart_toStartOf="@+id/Aboutapptext2"
-            android:layout_marginStart="125dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView2"
-            android:layout_marginTop="24dp"
-            app:layout_constraintTop_toBottomOf="@+id/imageView6"
-            android:layout_marginBottom="5dp"
-            android:contentDescription="@string/infopic"/>
+            android:contentDescription="@string/infopic"
+            android:layout_marginTop="140dp" app:layout_constraintTop_toTopOf="@+id/Aboutapptext"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/Aboutapptext2"
+            app:layout_constraintEnd_toEndOf="@+id/Aboutapptext"
+            app:layout_constraintStart_toStartOf="@+id/Aboutapptext" android:layout_marginEnd="120dp"/>
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@drawable/ic_at"
             android:id="@+id/imageView9" app:layout_constraintEnd_toStartOf="@+id/textView3"
             android:layout_marginEnd="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView3" android:layout_marginTop="28dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintStart_toStartOf="@+id/Aboutapptext2" android:layout_marginStart="24dp"
-            android:contentDescription="@string/contactsingn1"/>
+            app:layout_constraintStart_toStartOf="@+id/Aboutapptext2" android:layout_marginStart="16dp"
+            android:contentDescription="@string/contactsingn1" android:layout_marginBottom="50dp"
+            app:layout_constraintBottom_toBottomOf="@+id/Aboutapptext" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView6"/>
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@drawable/ic_www"
             android:id="@+id/imageView10"
-            app:layout_constraintBottom_toBottomOf="@+id/textView4" android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"
-            app:layout_constraintStart_toStartOf="@+id/Aboutapptext2" android:layout_marginStart="105dp"
-            app:layout_constraintEnd_toStartOf="@+id/textView4" android:layout_marginEnd="8dp"
-            android:contentDescription="@string/contactsingn2"/>
+            app:layout_constraintStart_toStartOf="@+id/Aboutapptext2"
+            android:layout_marginEnd="170dp"
+            android:contentDescription="@string/contactsingn2" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView6" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/Aboutapptext"
+            app:layout_constraintEnd_toEndOf="@+id/Aboutapptext2" android:layout_marginStart="8dp"/>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:srcCompat="@drawable/ic_closebutt"
+            android:id="@+id/imageView11" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toEndOf="@+id/imageView2"
+            android:layout_marginStart="80dp" android:layout_marginBottom="100dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/closebutt"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
