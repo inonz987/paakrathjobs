@@ -8,16 +8,13 @@ import android.view.ViewGroup
 import android.webkit.WebView
 import android.webkit.WebViewClient
 
-class DoctorActivity : androidx.fragment.app.Fragment()
+class DoctorActivity : Fragment()
 {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.bachelor_tab, container, false)
         val mWebView = view.findViewById(R.id.webview) as WebView
-        mWebView.loadUrl("https://www.paakrathjobs.ga/post/")
-        // Enable Javascript
-        //val webSettings = mWebView.getSettings()
-        //webSettings.setJavaScriptEnabled(true)
-        // Force links and redirects to open in the WebView instead of in a browser
+        mWebView.settings.setAppCacheEnabled(true)
+        mWebView.loadUrl("https://www.paakrathjobs.ga/post2/")
         mWebView.webViewClient = WebViewClient()
         return view
     }

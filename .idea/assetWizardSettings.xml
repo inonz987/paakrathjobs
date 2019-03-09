@@ -19,8 +19,11 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_closebutt" />
-                            <entry key="sourceFile" value="D:\closebutt.svg" />
+                            <entry key="height" value="42" />
+                            <entry key="outputName" value="ic_noconntext" />
+                            <entry key="overrideSize" value="true" />
+                            <entry key="sourceFile" value="E:\noconntext.svg" />
+                            <entry key="width" value="262" />
                           </map>
                         </option>
                       </PersistentState>

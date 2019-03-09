@@ -14,8 +14,7 @@
     <string name="Loadingscreen">Loading screen</string>
     <string name="model_pic_des">Model Pic</string>
     <string name="About1">เกี่ยวกับแอปงานภาครัฐ</string>
-    <string name="About2">งานภาครัฐพัฒนาเพื่อท่านที่สนใจงานในส่วนงานภาครัฐบาล
-        เป็นแอปฟรีที่ตั้งใจจัดทำขึ้นเพื่อประโยชน์แก่ทุกท่าน
+    <string name="About2">งานภาครัฐเป็นแอปฟรีที่ตั้งใจจัดทำขึ้นเพื่อประโยชน์แก่ทุกท่าน
         สามารถสนับสนุนผู้พัฒนาเพื่อปรับปรุงและพัฒนา
         แอปที่มีประโยชน์เพิ่มเติมได้ผ่านช่องทางนี้</string>
     <string name="model_pic_des2">About app pic</string>
@@ -29,5 +28,10 @@
     <string name="contactsingn1">contactsingn1</string>
     <string name="contactsingn2">contactsingn1</string>
     <string name="closebutt">closebutt</string>
+    <string name="nointernetconnicon">nointernetconnicon</string>
+    <string name="retrybutt">retrybutt</string>
+    <string name="nointernettext">nointernettext</string>
+
+
 
 </resources>
