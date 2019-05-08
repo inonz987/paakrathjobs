@@ -18,7 +18,12 @@ class NoconnectionActivity : AppCompatActivity() {
             finish()
         }
 
+        val retry = findViewById<ImageView>(R.id.retrybutt)
+        retry.setOnClickListener{
+            val intent = Intent(this@NoconnectionActivity, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
-
 
 }

@@ -8,6 +8,7 @@
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
         android:background="#FFFFFF"
+        android:noHistory="true"
         tools:context="com.khunthong.apps.paakrathjobs2.NoconnectionActivity">
 
     <ImageView

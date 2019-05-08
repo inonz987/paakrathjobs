@@ -143,9 +143,6 @@ class MainActivity : AppCompatActivity(){
                finish()
            }
 
-
-
-
                when(position){
 
                    0 -> {
