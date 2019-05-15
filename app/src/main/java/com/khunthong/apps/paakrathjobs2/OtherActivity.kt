@@ -1,37 +1,70 @@
 package com.khunthong.apps.paakrathjobs2
+
+import android.annotation.SuppressLint
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebResourceError
+import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.khunthong.apps.paakrathjobs2.R.layout
 
+
+const val url4 = "https://www.paakrathjobs.ga/others/"
 
 class OtherActivity : Fragment() {
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.bachelor_tab, container, false)
-        val refreshLayout = view.findViewById (R.id.swipe_refresh_layout) as SwipeRefreshLayout
-        val mWebView = view.findViewById(R.id.webview) as WebView
-        mWebView.settings.setAppCacheEnabled(true)
-        mWebView.settings.javaScriptEnabled
-        mWebView.loadUrl("https://www.paakrathjobs.ga/post2/")
-        mWebView.webViewClient = WebViewClient()
 
+    @SuppressLint("SetJavaScriptEnabled")
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val view = inflater.inflate(layout.bachelor_tab, container, false)
+        val refreshLayout = view?.findViewById(R.id.swipe_refresh_layout) as SwipeRefreshLayout
+        val mWebView = view.findViewById(R.id.webview) as WebView
+
+        mWebView.settings.setAppCacheEnabled(true)
+        mWebView.settings.javaScriptEnabled = true
+        mWebView.settings.allowContentAccess = true
+        mWebView.settings.allowFileAccessFromFileURLs = true
+        mWebView.settings.allowFileAccess = true
+        mWebView.settings.allowUniversalAccessFromFileURLs = true
+        //mWebView.progress.times(200)
+        mWebView.loadUrl(url4)
+        mWebView.webViewClient = object : WebViewClient() {
+
+
+            override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
+                if (Uri.parse(url).host == "https://www.paakrathjobs.ga/others/") {
+                    return false
+                }
+
+                return false
+            }
+
+            override fun onReceivedError(view: WebView?, request: WebResourceRequest?, error: WebResourceError?) {
+                super.onReceivedError(view, request, error)
+                mWebView.loadUrl("file:///android_asset/NoInternet.html")
+            }
+
+        }
         refreshLayout.setOnRefreshListener {
-            mWebView.loadUrl("https://www.google.co.th")
+            mWebView.loadUrl("https://www.paakrathjobs.ga/others/")
             Handler().postDelayed({
                 refreshLayout.isRefreshing = false
-            },2500)
-
+            }, 2500)
         }
         refreshLayout.setColorSchemeColors(
             Color.parseColor("#008744"), Color.parseColor("#0057e7"),
-            Color.parseColor("#d62d20"))
+            Color.parseColor("#d62d20")
+        )
 
         return view
+
     }
 }
+

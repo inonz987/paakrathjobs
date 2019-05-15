@@ -8,6 +8,8 @@ import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebResourceError
+import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
@@ -15,7 +17,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.khunthong.apps.paakrathjobs2.R.layout
 
 
-const val url= "https://www.paakrathjobs.ga/post2/"
+const val url= "https://www.paakrathjobs.ga/barchelor/"
 class BachelorActivity : Fragment() {
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -37,7 +39,7 @@ class BachelorActivity : Fragment() {
 
             override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean
             {
-                if(Uri.parse(url).host=="https://www.paakrathjobs.ga/post2/")
+                if(Uri.parse(url).host=="https://www.paakrathjobs.ga/barchelor/")
                 {
                     return false
                 }
@@ -48,7 +50,10 @@ class BachelorActivity : Fragment() {
                 return false
             }
 
-
+             override fun onReceivedError(view: WebView?, request: WebResourceRequest?, error: WebResourceError?) {
+                super.onReceivedError(view, request, error)
+                 mWebView.loadUrl("file:///android_asset/NoInternet.html")
+            }
 
         }
         //mWebView.setDownloadListener(true)
@@ -65,7 +70,7 @@ class BachelorActivity : Fragment() {
         }
 */
         refreshLayout.setOnRefreshListener {
-            mWebView.loadUrl("https://www.paakrathjobs.ga/post2/")
+            mWebView.loadUrl("https://www.paakrathjobs.ga/barchelor/")
             Handler().postDelayed({
                 refreshLayout.isRefreshing = false
             }, 2500)
