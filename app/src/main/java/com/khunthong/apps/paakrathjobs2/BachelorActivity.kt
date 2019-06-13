@@ -1,6 +1,7 @@
 package com.khunthong.apps.paakrathjobs2
 
 import android.annotation.SuppressLint
+import android.graphics.Bitmap
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
@@ -14,18 +15,42 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.airbnb.lottie.LottieAnimationView
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import com.khunthong.apps.paakrathjobs2.R.layout
+import kotlinx.android.synthetic.main.bachelor_tab.*
 
 
-const val url= "https://www.paakrathjobs.ga/barchelor/"
+const val url = "https://www.paakrathjobs.ga/barchelor/"
+
 class BachelorActivity : Fragment() {
+
+    lateinit var mAdView: AdView
+    lateinit var animationView: LottieAnimationView
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        super.onCreateView(inflater, container, savedInstanceState)
         val view = inflater.inflate(layout.bachelor_tab, container, false)
         val refreshLayout = view?.findViewById(R.id.swipe_refresh_layout) as SwipeRefreshLayout
         val mWebView = view.findViewById(R.id.webview) as WebView
-
+        //animation_view2.setAnimation("glowloading.json")
+        //animation_view2.playAnimation()
+        //animation_view2.loop(false)
+/*if(savedInstanceState == null) {
+        animationView = view.findViewById(R.id.animation_view2)
+        animationView.apply {
+            speed = 0.7f
+            setAnimation("glowloading.json")
+            playAnimation()
+            Handler().postDelayed({
+                animationView.cancelAnimation()
+                animation_view2.visibility = View.INVISIBLE
+            }, 3500)
+        } }*/
+        //animationView.cancelAnimation()
         mWebView.settings.setAppCacheEnabled(true)
         mWebView.settings.javaScriptEnabled = true
         mWebView.settings.allowContentAccess = true
@@ -34,28 +59,54 @@ class BachelorActivity : Fragment() {
         mWebView.settings.allowUniversalAccessFromFileURLs = true
         //mWebView.progress.times(200)
         mWebView.loadUrl(url)
-        mWebView.webViewClient = object: WebViewClient() {
+        mWebView.webViewClient = object : WebViewClient() {
 
-
-            override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean
-            {
-                if(Uri.parse(url).host=="https://www.paakrathjobs.ga/barchelor/")
-                {
+            override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
+                if (Uri.parse(url).host == "https://www.paakrathjobs.ga/barchelor/") {
                     return false
                 }
 
-               // val intent= Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                // val intent= Intent(Intent.ACTION_VIEW, Uri.parse(url))
                 //startActivity(intent)
                 //return true
                 return false
             }
 
-             override fun onReceivedError(view: WebView?, request: WebResourceRequest?, error: WebResourceError?) {
+            override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+                super.onPageStarted(view, url, favicon)
+                    //view?.visibility = View.INVISIBLE
+                if (view != null) {
+                    animationView = view.findViewById(R.id.animation_view2)
+                }
+                animationView.apply {
+                    speed = 0.7f
+                    animation_view2.visibility = View.VISIBLE
+                    animation_view2.loop(true)
+                    setAnimation("glowloading.json")
+                    playAnimation()
+
+            } }
+
+            override fun onPageFinished(view: WebView?, url: String?) {
+                super.onPageFinished(view, url)
+                animation_view2.visibility = View.INVISIBLE
+            }
+
+            override fun onReceivedError(view: WebView?, request: WebResourceRequest?, error: WebResourceError?) {
                 super.onReceivedError(view, request, error)
-                 mWebView.loadUrl("file:///android_asset/NoInternet.html")
+                mWebView.loadUrl("file:///android_asset/NoInternet.html")
             }
 
         }
+
+
+        MobileAds.initialize(context, "ca-app-pub-1596669851189941~4338056569")
+
+        mAdView = view.findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+
+
         //mWebView.setDownloadListener(true)
 
 
@@ -69,6 +120,8 @@ class BachelorActivity : Fragment() {
             mWebView.context.startActivity(intent)
         }
 */
+        //animation_view2.setAnimation("glowloading.json")
+
         refreshLayout.setOnRefreshListener {
             mWebView.loadUrl("https://www.paakrathjobs.ga/barchelor/")
             Handler().postDelayed({
@@ -83,10 +136,8 @@ class BachelorActivity : Fragment() {
         return view
 
 
-
     }
 }
-
 
 
 /*

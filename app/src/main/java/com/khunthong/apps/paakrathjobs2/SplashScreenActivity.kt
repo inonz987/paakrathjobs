@@ -6,9 +6,7 @@ import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 
 
-
-class SplashScreenActivity : AppCompatActivity()
-{
+class SplashScreenActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +21,7 @@ class SplashScreenActivity : AppCompatActivity()
             startActivity(Intent(this@SplashScreenActivity, MainActivity::class.java))
             //finish this activity
             finish()
-        },3500)
+        }, 3500)
 
 /*
         val background = object : Thread() {

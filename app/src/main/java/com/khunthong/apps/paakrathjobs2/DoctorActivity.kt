@@ -14,6 +14,9 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import com.khunthong.apps.paakrathjobs2.R.layout
 
 
@@ -21,6 +24,7 @@ const val url3 = "https://www.paakrathjobs.ga/doctor/"
 
 class DoctorActivity : Fragment() {
 
+    lateinit var mAdView : AdView
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(layout.bachelor_tab, container, false)
@@ -52,6 +56,13 @@ class DoctorActivity : Fragment() {
             }
 
         }
+
+        MobileAds.initialize(context, "ca-app-pub-1596669851189941~4338056569")
+
+        mAdView = view.findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+
         refreshLayout.setOnRefreshListener {
             mWebView.loadUrl("https://www.paakrathjobs.ga/doctor/")
             Handler().postDelayed({

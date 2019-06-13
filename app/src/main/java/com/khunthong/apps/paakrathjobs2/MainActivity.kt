@@ -19,14 +19,22 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 @Suppress("DEPRECATION")
-class MainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity() {
 
-
+    //    private lateinit var mInterstitialAd: InterstitialAd
     private var mSectionsPagerAdapter: SectionsPagerAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //animation_view2.setAnimation("glowloading.json")
+        // Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713
+/*        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713")
+        mInterstitialAd = InterstitialAd(this)
+        mInterstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+        mInterstitialAd.loadAd(AdRequest.Builder().build())*/
+
+
         setSupportActionBar(toolbar)
         mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
         // Set up the ViewPager with the sections adapter.
@@ -65,128 +73,124 @@ class MainActivity : AppCompatActivity(){
         }
         swipe_refresh_layout.setColorSchemeColors(Color.parseColor("#008744"), Color.parseColor("#0057e7"),Color.parseColor("#d62d20"))
 */
-   }
+    }
 
 
-   override fun onCreateOptionsMenu(menu: Menu): Boolean {
-       // Inflate the menu; this adds items to the action bar if it is present.
-       menuInflater.inflate(R.menu.menu_main, menu)
-       return true
-   }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
 
-   override fun onOptionsItemSelected(item: MenuItem): Boolean {
-       // Handle action bar item clicks here. The action bar will
-       // automatically handle clicks on the Home/Up button, so long
-       // as you specify a parent activity in AndroidManifest.xml.
-       val id = item.itemId
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        val id = item.itemId
 
-       if (id == R.id.action_settings) {
-          val intent = Intent(this@MainActivity, AboutActivity::class.java)
-           startActivity(intent)
-           finish()
-       }
+        if (id == R.id.action_settings) {
+            val intent = Intent(this@MainActivity, AboutActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
-       return super.onOptionsItemSelected(item)
-   }
+        return super.onOptionsItemSelected(item)
+    }
 
-   private var doubleBackToExitPressedOnce = false
-   override fun onBackPressed() {
-       if (doubleBackToExitPressedOnce)
-       {
-           super.onBackPressed()
-           return
-       }
-       this.doubleBackToExitPressedOnce = true
-       //Toast.makeText(this, "กดย้อนกลับอีกครั้งเพื่อออกจากแอป", Toast.LENGTH_SHORT).show()
-       //Toasty.normal(this, "กดย้อนกลับอีกครั้งเพื่อออกจากแอป",R.drawable.ic_app_logo).show()
-       Toasty.warning(this,"กดย้อนกลับอีกครั้งเพื่อออกจากแอป",Toast.LENGTH_SHORT, true).show()
+    private var doubleBackToExitPressedOnce = false
+    override fun onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed()
+            return
+        }
+        this.doubleBackToExitPressedOnce = true
+        //Toast.makeText(this, "กดย้อนกลับอีกครั้งเพื่อออกจากแอป", Toast.LENGTH_SHORT).show()
+        //Toasty.normal(this, "กดย้อนกลับอีกครั้งเพื่อออกจากแอป",R.drawable.ic_app_logo).show()
+        Toasty.warning(this, "กดย้อนกลับอีกครั้งเพื่อออกจากแอป", Toast.LENGTH_SHORT, true).show()
 
-   Handler().postDelayed({ doubleBackToExitPressedOnce = false }, 4000)
-   }
+        Handler().postDelayed({ doubleBackToExitPressedOnce = false }, 4000)
+    }
 
-   /**
-    * A [FragmentPagerAdapter] that returns a fragment corresponding to
-    * one of the sections/tabs/pages.
+    /**
+     * A [FragmentPagerAdapter] that returns a fragment corresponding to
+     * one of the sections/tabs/pages.
 
-   inner class SectionsPagerAdapter(fm: androidx.fragment.app.FragmentManager) : androidx.fragment.app.FragmentPagerAdapter(fm) {
-    */
+    inner class SectionsPagerAdapter(fm: androidx.fragment.app.FragmentManager) : androidx.fragment.app.FragmentPagerAdapter(fm) {
+     */
 
-   inner class SectionsPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
-       override fun getItem(position: Int): Fragment {
+    inner class SectionsPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+        override fun getItem(position: Int): Fragment {
 
-           /** Fun to check network status */
-           fun isNetworkStatusActive(): Boolean {
+            /** Fun to check network status */
+            fun isNetworkStatusActive(): Boolean {
 
-               val cm = getSystemService(Context.CONNECTIVITY_SERVICE)
+                val cm = getSystemService(Context.CONNECTIVITY_SERVICE)
 
-               if (cm is ConnectivityManager) {
-                   val activeNetwork: NetworkInfo? = cm.activeNetworkInfo
-                   val isConnected: Boolean = activeNetwork?.isConnectedOrConnecting == true
-                   //val isWiFi: Boolean = activeNetwork?.type == ConnectivityManager.TYPE_WIFI
+                if (cm is ConnectivityManager) {
+                    val activeNetwork: NetworkInfo? = cm.activeNetworkInfo
+                    val isConnected: Boolean = activeNetwork?.isConnectedOrConnecting == true
+                    //val isWiFi: Boolean = activeNetwork?.type == ConnectivityManager.TYPE_WIFI
 
-                   if (!isConnected) {
+                    if (!isConnected) {
 
-                       return false
-                   }
-               }
+                        return false
+                    }
+                }
 
-               return true
-           }
+                return true
+            }
 
-           // To check network status if no connection intent to sorry activity :)
-           if (!isNetworkStatusActive())
+            // To check network status if no connection intent to sorry activity :)
+            if (!isNetworkStatusActive()) {
 
-           {
+                val intent = Intent(this@MainActivity, NoconnectionActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
 
-               val intent = Intent(this@MainActivity, NoconnectionActivity::class.java)
-               startActivity(intent)
-               finish()
-           }
+            when (position) {
 
-               when(position){
+                0 -> {
+                    return BachelorActivity()
+                }
+                1 -> {
+                    return MasterActivity()
+                }
+                2 -> {
+                    return DoctorActivity()
+                }
+                3 -> {
+                    return OtherActivity()
+                }
 
-                   0 -> {
-                       return BachelorActivity()
-                   }
-                   1 -> {
-                       return MasterActivity()
-                   }
-                   2 -> {
-                       return DoctorActivity()
-                   }
-                   3 -> {
-                       return OtherActivity()
-                   }
+                else -> {
+                    return BachelorActivity()
+                }
 
-                   else -> {return BachelorActivity()}
-
-               }
-
-
-       }
+            }
 
 
+        }
 
-       override fun getCount(): Int {
-           // Show 4 total pages.
-           return 4
-       }
 
-       override fun getPageTitle(position: Int): CharSequence?
-       {
-             when(position)
-             {
-                   0 -> return "Bachelor"
-                   1 -> return "Master"
-                   2 -> return "Doctor"
-                   3 -> return "Other"
+        override fun getCount(): Int {
+            // Show 4 total pages.
+            return 4
+        }
 
-             }
-           return null
+        override fun getPageTitle(position: Int): CharSequence? {
+            when (position) {
+                0 -> return "Bachelor"
+                1 -> return "Master"
+                2 -> return "Doctor"
+                3 -> return "Other"
 
-       }
+            }
+            return null
 
-   }
+        }
+
+    }
 
 
 }

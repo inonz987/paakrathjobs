@@ -22,7 +22,7 @@ class NoconnectionActivity : AppCompatActivity() {
         }
 
         val retry = findViewById<ImageView>(R.id.retrybutt)
-        retry.setOnClickListener{
+        retry.setOnClickListener {
             val intent = Intent(this@NoconnectionActivity, MainActivity::class.java)
             startActivity(intent)
             finish()
@@ -30,18 +30,19 @@ class NoconnectionActivity : AppCompatActivity() {
 
 
     }
+
     private var doubleBackToExitPressedOnce = false
     override fun onBackPressed() {
-        if (doubleBackToExitPressedOnce)
-        {
+        if (doubleBackToExitPressedOnce) {
             super.onBackPressed()
             return
         }
         this.doubleBackToExitPressedOnce = true
         //Toast.makeText(this, "กดย้อนกลับอีกครั้งเพื่อออกจากแอป", Toast.LENGTH_SHORT).show()
         //Toasty.normal(this, "กดย้อนกลับอีกครั้งเพื่อออกจากแอป",R.drawable.ic_app_logo).show()
-        Toasty.warning(this,"กดย้อนกลับอีกครั้งเพื่อออกจากแอป", Toast.LENGTH_SHORT, true).show()
+        Toasty.warning(this, "กดย้อนกลับอีกครั้งเพื่อออกจากแอป", Toast.LENGTH_SHORT, true).show()
 
         Handler().postDelayed({ doubleBackToExitPressedOnce = false }, 4000)
+        finish()
     }
 }
